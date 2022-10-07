@@ -14,9 +14,16 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'title' => 'required|unique:posts|max:255',
-            'body' => 'required',
-        ]);
+        $validated = $request->validate(
+//            [
+//                'title' => 'required|unique:posts|max:255',
+//                'body' => 'required',
+//                'publish_at' => 'nullable|date',
+//            ]
+        );
+
+        $validated = $request->safe()->only(['name', 'email']);
+        $validated = $request->safe()->except(['name', 'email']);
+
     }
 }
