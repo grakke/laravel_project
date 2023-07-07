@@ -38,13 +38,13 @@ devDependencies:
     specifier: ^4.17.19
     version: 4.17.19
   postcss:
-    specifier: ^8.4.25
+    specifier: ^8.4.18
     version: 8.4.25
   postcss-import:
     specifier: ^14.1.0
     version: 14.1.0(postcss@8.4.25)
   tailwindcss:
-    specifier: ^3.3.2
+    specifier: ^3.2.1
     version: 3.3.2
   vite:
     specifier: ^4.0.0
