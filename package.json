@@ -21,6 +21,7 @@
         "vue": "^3.2.41"
     },
     "dependencies": {
+        "dayjs": "^1.11.9",
         "vue": "^3.2.41",
         "vue-loader": "^17.0.0"
     }

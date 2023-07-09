@@ -6,15 +6,18 @@ use App\Models\Chirp;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
+use Inertia\Response;
 
 class ChirpController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index(): Response
     {
-        return view('chirps.index', ['chirps' => Chirp::with('user')->latest()->get(),
+        return Inertia::render('Chirps/Index', [
+            'chirps' => Chirp::with('user:id,name')->latest()->get(),
         ]);
     }
 
@@ -62,7 +65,7 @@ class ChirpController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Chirp $chirp):RedirectResponse
+    public function update(Request $request, Chirp $chirp): RedirectResponse
     {
         $this->authorize('update', $chirp);
         $validated = $request->validate([
