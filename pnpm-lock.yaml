@@ -21,7 +21,7 @@ devDependencies:
     version: 0.5.3(tailwindcss@3.3.2)
   '@vitejs/plugin-vue':
     specifier: ^4.0.0
-    version: 4.0.0(vite@4.0.0)(vue@3.2.41)
+    version: 4.0.0(vite@4.0.5)(vue@3.2.41)
   alpinejs:
     specifier: ^3.4.2
     version: 3.4.2
@@ -33,7 +33,7 @@ devDependencies:
     version: 1.4.0
   laravel-vite-plugin:
     specifier: ^0.7.5
-    version: 0.7.5(vite@4.0.0)
+    version: 0.7.5(vite@4.0.5)
   lodash:
     specifier: ^4.17.19
     version: 4.17.19
@@ -47,8 +47,8 @@ devDependencies:
     specifier: ^3.1.0
     version: 3.3.2
   vite:
-    specifier: ^4.0.0
-    version: 4.0.0
+    specifier: ^4.0.5
+    version: 4.0.5
 
 packages:
 
@@ -393,14 +393,14 @@ packages:
     resolution: {integrity: sha512-jfT7iTf/4kOQ9S7CHV9BIyRaQqHu67mOjsIQBC3BKZvzvUB6zLxEwJ6sBE3ozcvP8kF6Uk5PXN0Q+c0dfhGX0g==}
     dev: false
 
-  /@vitejs/plugin-vue@4.0.0(vite@4.0.0)(vue@3.2.41):
+  /@vitejs/plugin-vue@4.0.0(vite@4.0.5)(vue@3.2.41):
     resolution: {integrity: sha512-e0X4jErIxAB5oLtDqbHvHpJe/uWNkdpYV83AOG2xo2tEVSzCzewgJMtREZM30wXnM5ls90hxiOtAuVU6H5JgbA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.0.0
+      vite: 4.0.5
       vue: 3.2.41
     dev: true
 
@@ -1128,15 +1128,15 @@ packages:
     hasBin: true
     dev: false
 
-  /laravel-vite-plugin@0.7.5(vite@4.0.0):
+  /laravel-vite-plugin@0.7.5(vite@4.0.5):
     resolution: {integrity: sha512-BrrjFhbpJpQkG3a0DQ68x6Vk1glwQPF5A2HywY9w5te7Dp/AmEIj71f9/m/wS44/HFXTUVd2IUhD+zGjevgPfw==}
     engines: {node: '>=14'}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0
     dependencies:
       picocolors: 1.0.0
-      vite: 4.0.0
-      vite-plugin-full-reload: 1.0.5(vite@4.0.0)
+      vite: 4.0.5
+      vite-plugin-full-reload: 1.0.5(vite@4.0.5)
     dev: true
 
   /lilconfig@2.1.0:
@@ -1645,18 +1645,18 @@ packages:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
 
-  /vite-plugin-full-reload@1.0.5(vite@4.0.0):
+  /vite-plugin-full-reload@1.0.5(vite@4.0.5):
     resolution: {integrity: sha512-kVZFDFWr0DxiHn6MuDVTQf7gnWIdETGlZh0hvTiMXzRN80vgF4PKbONSq8U1d0WtHsKaFODTQgJeakLacoPZEQ==}
     peerDependencies:
       vite: ^2 || ^3 || ^4
     dependencies:
       picocolors: 1.0.0
       picomatch: 2.3.1
-      vite: 4.0.0
+      vite: 4.0.5
     dev: true
 
-  /vite@4.0.0:
-    resolution: {integrity: sha512-ynad+4kYs8Jcnn8J7SacS9vAbk7eMy0xWg6E7bAhS1s79TK+D7tVFGXVZ55S7RNLRROU1rxoKlvZ/qjaB41DGA==}
+  /vite@4.0.5:
+    resolution: {integrity: sha512-7m87RC+caiAxG+8j3jObveRLqaWA/neAdCat6JAZwMkSWqFHOvg8MYe5fAQxVBRAuKAQ1S6XDh3CBQuLNbY33w==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
