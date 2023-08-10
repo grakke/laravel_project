@@ -35,8 +35,8 @@ devDependencies:
     specifier: ^0.7.5
     version: 0.7.5(vite@4.0.0)
   lodash:
-    specifier: ^4.17.19
-    version: 4.17.19
+    specifier: ^4.17.21
+    version: 4.17.21
   postcss:
     specifier: ^8.4.6
     version: 8.4.25
@@ -1170,8 +1170,8 @@ packages:
     resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
     dev: true
 
-  /lodash@4.17.19:
-    resolution: {integrity: sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==}
+  /lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: true
 
   /magic-string@0.25.9:
