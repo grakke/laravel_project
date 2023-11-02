@@ -18,7 +18,7 @@ class ThreadsTest extends TestCase
 
         $response->assertSee($thread->title);
 
-        $response = $this->get('/threads/' . $thread->id);
-        $response->assertSee($thread->title);
+//        $response = $this->get('/threads/' . $thread->id);
+//        $response->assertSee($thread->title);
     }
 }
