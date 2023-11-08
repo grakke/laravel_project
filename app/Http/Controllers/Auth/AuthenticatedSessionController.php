@@ -8,16 +8,32 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+<<<<<<< HEAD
 use Illuminate\View\View;
+||||||| parent of 4c2ead8 (add Pages)
+=======
+use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
+use Inertia\Response;
+>>>>>>> 4c2ead8 (add Pages)
 
 class AuthenticatedSessionController extends Controller
 {
     /**
      * Display the login view.
      */
+<<<<<<< HEAD
     public function create(): View
+||||||| parent of 4c2ead8 (add Pages)
+    public function create()
+=======
+    public function create(): Response
+>>>>>>> 4c2ead8 (add Pages)
     {
-        return view('auth.login');
+        return Inertia::render('Auth/Login', [
+            'canResetPassword' => Route::has('password.request'),
+            'status' => session('status'),
+        ]);
     }
 
     /**
