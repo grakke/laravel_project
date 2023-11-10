@@ -10,27 +10,16 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules;
-<<<<<<< HEAD
-use Illuminate\View\View;
-||||||| parent of 4c2ead8 (add Pages)
-=======
 use Illuminate\Validation\ValidationException;
+use Illuminate\View\View;
 use Inertia\Inertia;
-use Inertia\Response;
->>>>>>> 4c2ead8 (add Pages)
 
 class NewPasswordController extends Controller
 {
     /**
      * Display the password reset view.
      */
-<<<<<<< HEAD
     public function create(Request $request): View
-||||||| parent of 4c2ead8 (add Pages)
-    public function create(Request $request)
-=======
-    public function create(Request $request): Response
->>>>>>> 4c2ead8 (add Pages)
     {
         return Inertia::render('Auth/ResetPassword', [
             'email' => $request->email,

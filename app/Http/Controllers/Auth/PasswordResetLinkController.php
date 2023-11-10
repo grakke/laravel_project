@@ -6,27 +6,16 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
-<<<<<<< HEAD
-use Illuminate\View\View;
-||||||| parent of 4c2ead8 (add Pages)
-=======
 use Illuminate\Validation\ValidationException;
+use Illuminate\View\View;
 use Inertia\Inertia;
-use Inertia\Response;
->>>>>>> 4c2ead8 (add Pages)
 
 class PasswordResetLinkController extends Controller
 {
     /**
      * Display the password reset link request view.
      */
-<<<<<<< HEAD
     public function create(): View
-||||||| parent of 4c2ead8 (add Pages)
-    public function create()
-=======
-    public function create(): Response
->>>>>>> 4c2ead8 (add Pages)
     {
         return Inertia::render('Auth/ForgotPassword', [
             'status' => session('status'),

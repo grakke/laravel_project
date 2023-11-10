@@ -11,30 +11,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
-<<<<<<< HEAD
 use Illuminate\View\View;
-||||||| parent of 4c2ead8 (add Pages)
-=======
 use Inertia\Inertia;
-use Inertia\Response;
->>>>>>> 4c2ead8 (add Pages)
 
 class RegisteredUserController extends Controller
 {
-    /**
-     * Display the registration view.
-     */
-<<<<<<< HEAD
-    public function create(): View
-||||||| parent of 4c2ead8 (add Pages)
-    public function create()
-=======
-    public function create(): Response
->>>>>>> 4c2ead8 (add Pages)
-    {
-        return Inertia::render('Auth/Register');
-    }
-
     /**
      * Handle an incoming registration request.
      *
@@ -43,16 +24,8 @@ class RegisteredUserController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-<<<<<<< HEAD
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-||||||| parent of 4c2ead8 (add Pages)
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-=======
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:'.User::class,
->>>>>>> 4c2ead8 (add Pages)
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
@@ -67,5 +40,13 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
+    }
+
+    /**
+     * Display the registration view.
+     */
+    public function create(): View
+    {
+        return Inertia::render('Auth/Register');
     }
 }

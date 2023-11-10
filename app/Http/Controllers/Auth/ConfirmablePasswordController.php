@@ -8,26 +8,15 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
-<<<<<<< HEAD
 use Illuminate\View\View;
-||||||| parent of 4c2ead8 (add Pages)
-=======
 use Inertia\Inertia;
-use Inertia\Response;
->>>>>>> 4c2ead8 (add Pages)
 
 class ConfirmablePasswordController extends Controller
 {
     /**
      * Show the confirm password view.
      */
-<<<<<<< HEAD
     public function show(): View
-||||||| parent of 4c2ead8 (add Pages)
-    public function show()
-=======
-    public function show(): Response
->>>>>>> 4c2ead8 (add Pages)
     {
         return Inertia::render('Auth/ConfirmPassword');
     }
@@ -37,7 +26,7 @@ class ConfirmablePasswordController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        if (! Auth::guard('web')->validate([
+        if (!Auth::guard('web')->validate([
             'email' => $request->user()->email,
             'password' => $request->password,
         ])) {

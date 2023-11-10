@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     /**
-     * 存储一篇新的博客文章。
+     * 存储一篇新的博客文章
      *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
@@ -15,15 +15,14 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate(
-//            [
-//                'title' => 'required|unique:posts|max:255',
-//                'body' => 'required',
-//                'publish_at' => 'nullable|date',
-//            ]
+            [
+                'title' => 'required|unique:posts|max:255',
+                'body' => 'required',
+                'publish_at' => 'nullable|date',
+            ]
         );
 
         $validated = $request->safe()->only(['name', 'email']);
         $validated = $request->safe()->except(['name', 'email']);
-
     }
 }
