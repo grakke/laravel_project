@@ -10,11 +10,10 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('threads', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id');
-            $table->string('title');
-            $table->text('body');
+        Schema::create('teachers', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email')->unique()->comment('email should be unique');
             $table->timestamps();
         });
     }
@@ -24,6 +23,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('threads');
+        Schema::dropIfExists('teachers');
     }
 };

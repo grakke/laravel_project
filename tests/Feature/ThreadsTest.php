@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\TestCase;
 
 class ThreadsTest extends TestCase
 {
@@ -18,7 +18,7 @@ class ThreadsTest extends TestCase
 
         $response->assertSee($thread->title);
 
-//        $response = $this->get('/threads/' . $thread->id);
-//        $response->assertSee($thread->title);
+        $response = $this->get('/threads/' . $thread->id);
+        $response->assertSee($thread->title);
     }
 }
