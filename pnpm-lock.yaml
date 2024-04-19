@@ -21,7 +21,7 @@ devDependencies:
     version: 0.5.7(tailwindcss@3.4.1)
   '@vitejs/plugin-vue':
     specifier: ^4.6.2
-    version: 4.6.2(vite@4.5.2)(vue@3.4.15)
+    version: 4.6.2(vite@4.5.3)(vue@3.4.15)
   alpinejs:
     specifier: ^3.13.5
     version: 3.13.5
@@ -33,7 +33,7 @@ devDependencies:
     version: 1.6.7
   laravel-vite-plugin:
     specifier: ^0.7.8
-    version: 0.7.8(vite@4.5.2)
+    version: 0.7.8(vite@4.5.3)
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
@@ -47,8 +47,8 @@ devDependencies:
     specifier: ^3.4.1
     version: 3.4.1
   vite:
-    specifier: ^4.5.2
-    version: 4.5.2
+    specifier: ^4.5.3
+    version: 4.5.3
 
 packages:
 
@@ -411,14 +411,14 @@ packages:
       undici-types: 5.26.5
     dev: false
 
-  /@vitejs/plugin-vue@4.6.2(vite@4.5.2)(vue@3.4.15):
+  /@vitejs/plugin-vue@4.6.2(vite@4.5.3)(vue@3.4.15):
     resolution: {integrity: sha512-kqf7SGFoG+80aZG6Pf+gsZIVvGSCKE98JbiWqcCV9cThtg91Jav0yvYFC9Zb+jKetNGF6ZKeoaxgZfND21fWKw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.0.0 || ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.5.2
+      vite: 4.5.3
       vue: 3.4.15
     dev: true
 
@@ -1188,14 +1188,14 @@ packages:
     resolution: {integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==}
     dev: false
 
-  /laravel-vite-plugin@0.7.8(vite@4.5.2):
+  /laravel-vite-plugin@0.7.8(vite@4.5.3):
     resolution: {integrity: sha512-HWYqpQYHR3kEQ1LsHX7gHJoNNf0bz5z5mDaHBLzS+PGLCTmYqlU5/SZyeEgObV7z7bC/cnStYcY9H1DI1D5Udg==}
     engines: {node: '>=14'}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0
     dependencies:
       picocolors: 1.0.0
-      vite: 4.5.2
+      vite: 4.5.3
       vite-plugin-full-reload: 1.1.0
     dev: true
 
@@ -1782,8 +1782,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /vite@4.5.2:
-    resolution: {integrity: sha512-tBCZBNSBbHQkaGyhGCDUGqeo2ph8Fstyp6FMSvTtsXeZSPpSMGlviAOav2hxVTqFcx8Hj/twtWKsMJXNY0xI8w==}
+  /vite@4.5.3:
+    resolution: {integrity: sha512-kQL23kMeX92v3ph7IauVkXkikdDRsYMGTVl5KY2E9OY4ONLvkHf04MDTbnfo6NKxZiDLWzVpP5oTa8hQD8U3dg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
