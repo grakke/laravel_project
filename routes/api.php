@@ -19,3 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::apiResource('courses', CourseController::class);
+
+Route::middleware('auth:api', 'throttle:60,1')->group(function () {
+    Route::get('/profile', function () {
+        echo 'Hello';
+    });
+});
