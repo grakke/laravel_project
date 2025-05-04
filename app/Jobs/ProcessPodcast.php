@@ -19,22 +19,22 @@ class ProcessPodcast implements ShouldQueue
      * @var int
      */
     public $tries = 25;
-
     /**
      * The maximum number of exceptions to allow before failing.
      *
      * @var int
      */
     public $maxExceptions = 3;
+    protected $podcast;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($podcast)
     {
-        //
+        $this->podcast = $podcast;
     }
 
     /**

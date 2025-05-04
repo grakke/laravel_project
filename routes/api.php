@@ -25,3 +25,13 @@ Route::middleware('auth:api', 'throttle:60,1')->group(function () {
         echo 'Hello';
     });
 });
+
+Route::get('api/users/{user}', function (\App\Models\User $user) {
+    return $user->email;
+});
+
+Route::apiResource('photos', 'PhotoController');
+Route::apiResources([
+    'photos' => 'PhotoController',
+    'posts' => 'PostController'
+]);

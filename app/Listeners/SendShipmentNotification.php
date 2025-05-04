@@ -21,7 +21,7 @@ class SendShipmentNotification implements ShouldQueue
     /**
      * 处理事件
      *
-     * @param  OrderShipped  $event
+     * @param OrderShipped $event
      *
      * @return void
      */
@@ -36,6 +36,7 @@ class SendShipmentNotification implements ShouldQueue
     }
 
     use InteractsWithQueue;
+
     /**
      * 队列化任务使用的连接名称。
      *
@@ -46,7 +47,8 @@ class SendShipmentNotification implements ShouldQueue
     /**
      * 队列化任务使用的队列名称。
      *
-     * @var string|null
+     * @param OrderShipped $event
+     * @param $exception
      */
 //    public $queue = 'listeners';
 

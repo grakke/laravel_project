@@ -15,3 +15,38 @@
         </div>
     </div>
 </x-app-layout>
+
+@extends('layouts.app1')
+
+@section('title', 'Page Title')
+
+@section('sidebar')
+    @parent
+
+    <p>This is appended to the master sidebar.</p>
+@endsection
+
+@section('content')
+    <p>This is my body content.</p>
+
+    @component('alert')
+        @slot('title')
+            output
+        @endslot
+        <strong>Whoops!</strong> Something went wrong!
+    @endcomponent
+
+    @component('alert')
+        @slot('title')
+            Forbidden
+        @endslot
+
+        You are not allowed to access this resource!
+    @endcomponent
+
+    The current UNIX timestamp is {{ time() }}.
+
+    {{--Hello, {!! $name !!}.--}}
+
+    <example-component></example-component>
+@endsection

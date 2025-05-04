@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 //use App\Services\AppleMusic;
+use App\Jobs\ProcessPodcast;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
@@ -36,8 +37,15 @@ class PodcastController extends Controller
      */
     public function store(Request $request)
     {
-        // Create podcast...
+        // 创建播客...
+        // 延时
+        ProcessPodcast::dispatch($podcast)->delay(now()->addMinutes(10))->onQueue('processing')->onConnection('sqs');
+        // 同步
+        ProcessPodcast::dispatchNow($podcast);
 
-//        ProcessPodcast::dispatch($podcast);
+        ProcessPodcast::withChain([
+            new OptimizePodcast,
+            new ReleasePodcast
+        ])->dispatch()->allOnConnection('redis')->allOnQueue('podcasts');
     }
 }
