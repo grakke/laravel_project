@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 //use App\Services\AppleMusic;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\View\View;
 
 class PodcastController extends Controller
@@ -22,7 +24,20 @@ class PodcastController extends Controller
     public function show(string $id): View
     {
         return view('podcasts.show', [
-            'podcast' => $this->apple->findPodcast($id)
+//            'podcast' => $this->apple->findPodcast($id)
         ]);
+    }
+
+    /**
+     * Store a new podcast.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function store(Request $request)
+    {
+        // Create podcast...
+
+//        ProcessPodcast::dispatch($podcast);
     }
 }

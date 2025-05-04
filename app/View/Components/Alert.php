@@ -30,12 +30,23 @@ class Alert extends Component
      */
     public function render()
     {
-        return view('components.alert');
+        return view('components.alert', [$this->type, $this->message]);
     }
 
     public function formatAlert($str)
     {
-        echo '<strong>'.$str.'</strong>';
+        echo '<strong>' . $str . '</strong>';
 
+    }
+
+    /**
+     * Determine if the given option is the current selected option.
+     *
+     * @param string $option
+     * @return bool
+     */
+    public function isSelected($option)
+    {
+        return $option === $this->selected;
     }
 }
