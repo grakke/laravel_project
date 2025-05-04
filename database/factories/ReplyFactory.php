@@ -18,10 +18,10 @@ class ReplyFactory extends Factory
     {
         return [
             'thread_id' => function () {
-                return  \App\Models\Thread::factory()->create()->id;
+                return \App\Models\Thread::factory()->create()->id;
             },
             'user_id' => function () {
-                return  \App\Models\User::factory()->create()->id;
+                return \App\Models\User::factory()->create()->id;
             },
             'body' => fake()->paragraph,
         ];

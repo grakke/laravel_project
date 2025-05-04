@@ -20,7 +20,7 @@ class CourseResource extends JsonResource
             'description' => $this->description,
             'content' => $this->description,
             'teacher' => new TeacherResource($this->teacher),
-            'students' => $this->students->map(fn($s) => new StudentResource($s)), // show all students
+            'students' => $this->students->map(fn ($s) => new StudentResource($s)), // show all students
             'created_at' => $this->created_at->toDateTimeString(),
             'updated_at' => $this->updated_at->toDateTimeString(),
         ];

@@ -10,7 +10,6 @@ class Alert extends Component
 {
     public $type;
 
-
     public $message;
 
     /**
@@ -36,7 +35,7 @@ class Alert extends Component
 
     public function formatAlert($str)
     {
-        echo '<strong>' . $str . '</strong>';
-        return;
+        echo '<strong>'.$str.'</strong>';
+
     }
 }

@@ -14,7 +14,7 @@ class CourseController extends Controller
      */
     public function index(Request $request)
     {
-        return Course::when($request->name, fn($query, $name) => $query->where('name', 'like', "%{$name}%"))
+        return Course::when($request->name, fn ($query, $name) => $query->where('name', 'like', "%{$name}%"))
             ->withCount('students')
             ->with('teacher')
             ->paginate($request->per_page ?? 10);
@@ -25,7 +25,7 @@ class CourseController extends Controller
      */
     public function store(StoreCourseRequest $request)
     {
-        $course = tap(Course::create($request->validated()), fn($course) => $course->students()->sync($request->students));
+        $course = tap(Course::create($request->validated()), fn ($course) => $course->students()->sync($request->students));
 
         return response()->json(compact('course'), 201);
     }

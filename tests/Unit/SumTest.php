@@ -1,4 +1,5 @@
 <?php
+
 function sum(int|float $int, int|float $int1)
 {
     return $int + $int1;
@@ -9,7 +10,6 @@ test('sum', function () {
 
     $this->assertSame(3, $result); // Same as expect($result)->toBe(3)
 });
-
 
 it('performs sums', function () {
     $result = sum(1, 3);

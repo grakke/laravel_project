@@ -61,7 +61,7 @@ class StorePostRequest extends FormRequest
     /**
      * 配置验证实例。
      *
-     * @param Validator $validator
+     * @param  Validator  $validator
      * @return void
      */
     public function withValidator($validator)
@@ -72,5 +72,4 @@ class StorePostRequest extends FormRequest
             }
         });
     }
-
 }

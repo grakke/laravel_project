@@ -10,7 +10,6 @@ class PostController extends Controller
     /**
      * 存储一篇新的博客文章
      *
-     * @param Request $request
      * @return Response
      */
     public function store(Request $request)
