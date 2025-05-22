@@ -29,9 +29,8 @@
         - 创建一个监听器订阅 ChirpCreated
           事件 `php artisan make:listener SendChirpCreatedNotifications --event=ChirpCreated`
             - 用 ShouldQueue 接口标记了监听器，告诉 Laravel 监听器应该在队列 中运行。
-            - 默认情况下，将使用“数据库”队列异步处理作业。要开始处理排队的作业，应该在终端中运行 `php artisan queue:work`
-              命令
-- Livewire 是一种使用 PHP 构建动态、反应式前端 UI 的强大方法
+            - 默认使用“数据库”队列异步处理作业。要开始处理排队的作业，应该在终端中运行 `php artisan queue:work` 命令
+- Livewire 是一种使用 PHP 构建动态、反应式前端 UI 的强大方法 `php artisan breeze:install livewire`
 - 用 Inertia Vue 和 React 连接起来
 
 ```curl
