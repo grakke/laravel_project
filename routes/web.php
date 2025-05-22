@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ChirpController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('default');
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -33,9 +36,6 @@ Route::resource('chirps', ChirpController::class)
     ->only(['index', 'store', 'edit', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
 // 路由视图
 Route::view('/welcome', 'welcome', ['name' => 'Taylor']);
 Route::get('foo', function (Request $request) {
@@ -47,7 +47,6 @@ Route::get('/demo/view', 'DemoController@view');
 Route::get('/demo/response', 'DemoController@response');
 Route::post('/demo/response', function () {
     //验证请求
-
     return back()->withInput();
 });
 Route::get('/user', 'UserController@index');
@@ -73,7 +72,6 @@ Route::get('/user/check/{age}', 'UserController@check')->middleware('check')->wh
 
 // 可选参数
 Route::get('user/{name?}', function ($name = 'John') {
-
     return $name;
 })->where('name', '[A-Za-z]+');
 Route::get('search/{search}', function ($search) {
@@ -112,22 +110,14 @@ Route::permanentRedirect('/redirect', '/user');
 
 // 路由模型绑定 :行为注入模型 ID 时，就需要查询这个 ID 对应的模型
 // 隐式绑定
-Route::get('api/users/{user}', function (App\User $user) {
+Route::get('api/users/{user}', function (App\Models\User $user) {
     return $user->email;
 });
 // 显式绑定
-Route::get('profile/{user}', function (App\User $user) {
+Route::get('profile/{user}', function (App\Models\User $user) {
     //
 });
-
 Route::get('photos/popular', 'PhotoController@method');
-/*GET	/photos	index	photos.index
-GET	/photos/create	create	photos.create
-POST	/photos	store	photos.store
-GET	/photos/{photo}	show	photos.show
-GET	/photos/{photo}/edit	edit	photos.edit
-PUT/PATCH	/photos/{photo}	update	photos.update
-DELETE	/photos/{photo}	destroy	photos.destroy*/
 Route::resource('photos', 'PhotoController')->names([
     'create' => 'photos.build'
 ])->parameters([
@@ -160,8 +150,5 @@ Route::fallback(function () {
     sleep(3);
     echo redirect()->route('home');
 });
-
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 require __DIR__ . '/auth.php';

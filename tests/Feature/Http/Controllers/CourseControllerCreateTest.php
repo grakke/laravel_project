@@ -15,7 +15,7 @@ it('create course fails if the teacher is not exist', function () {
     ];
 
     $this->postJson(route('courses.store'), $course)
-        ->assertStatus(422)
+        ->assertStatus(403)
         ->assertJsonValidationErrors(['teacher_id']);
 });
 

@@ -20,6 +20,11 @@
 
 @section('title', 'Page Title')
 
+@section('header')
+    @parent
+    <p> Laravel 项目</p>
+@endsection
+
 @section('sidebar')
     @parent
 
@@ -28,6 +33,11 @@
 
 @section('content')
     <p>This is my body content.</p>
+
+    The current UNIX timestamp is {{ time() }}.
+    Hello, {!! $name !!}.
+    <p>这里是主体内容，完善中...</p>
+    {{ $name }}
 
     @component('alert')
         @slot('title')
@@ -44,9 +54,26 @@
         You are not allowed to access this resource!
     @endcomponent
 
-    The current UNIX timestamp is {{ time() }}.
-
-    {{--Hello, {!! $name !!}.--}}
-
     <example-component></example-component>
+
+    <x-alert type="error" :message="@message" class="mt-4 badge-danger"></x-alert>
+    <x-alert2>
+        <x-slot name="title">
+            Server Error
+        </x-slot>
+
+        <strong>Whoops!</strong> Something went wrong!
+    </x-alert2>
+    <x-alert3 type="warning" :message="@message" class="mt-5"/>
 @endsection
+
+@section('footer')
+    <div class="blockquote-footer">
+        This is last yellow
+    </div>a
+@endsection
+
+<script>
+    var app = @json($countries, JSON_PRETTY_PRINT);
+    console.log(app);
+</script>

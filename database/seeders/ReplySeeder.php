@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Reply;
 use Illuminate\Database\Seeder;
 
 class ReplySeeder extends Seeder
@@ -11,6 +12,6 @@ class ReplySeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Reply::factory(50)->create();
+        Reply::factory(50)->create();
     }
 }
