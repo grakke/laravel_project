@@ -1,8 +1,13 @@
 <?php
 
 use App\Http\Controllers\ChirpController;
+use App\Http\Controllers\DemoController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QueueController;
+use App\Http\Controllers\ThreadsController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,22 +41,24 @@ Route::resource('chirps', ChirpController::class)
     ->only(['index', 'store', 'edit', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
 
+Route::get('/threads', [ThreadsController::class, 'index']);
+
 // 路由视图
 Route::view('/welcome', 'welcome', ['name' => 'Taylor']);
 Route::get('foo', function (Request $request) {
     return 'Hello World';
 });
 
-Route::get('/demo/request', 'DemoController@request');
-Route::get('/demo/view', 'DemoController@view');
-Route::get('/demo/response', 'DemoController@response');
+Route::get('/demo/request', [DemoController::class, 'request']);
+Route::get('/demo/view', [DemoController::class, 'view']);
+Route::get('/demo/response', [DemoController::class, 'response']);
 Route::post('/demo/response', function () {
     //验证请求
     return back()->withInput();
 });
-Route::get('/user', 'UserController@index');
+Route::get('/user', [UserController::class, 'index']);
 
-Route::get('/queue/test', 'QueueController@test');
+Route::get('/queue/test', [QueueController::class, 'test']);
 // 命名
 //Route::get('user/profile', function () {
 //	return 'User Profile';
@@ -61,14 +68,14 @@ Route::get('user/{id}/profile', function ($id) {
 })->where('id', '[0-9]+')->name('profile_user');
 
 // 必填参数
-//Route::get('user/{id}', 'UserController@show')->where('id', '[0-9]+')->name('profile');
+//Route::get('user/{id}', [UserController::class, 'show'])->where('id', '[0-9]+')->name('profile');
 Route::get('posts/{post}/comments/{comment}', function ($postId, $commentId) {
     //
 });
-Route::match(['get', 'post', 'put'], 'user/update/{id}', 'UserController@update')->name('user_update');
-Route::put('user/{id}', 'UserController@update');
+Route::match(['get', 'post', 'put'], 'user/update/{id}', [UserController::class, 'update'])->name('user_update');
+Route::put('user/{id}', [UserController::class, 'update']);
 
-Route::get('/user/check/{age}', 'UserController@check')->middleware('check')->where('id', '[0-9]+');
+Route::get('/user/check/{age}', [UserController::class, 'check'])->middleware('check')->where('id', '[0-9]+');
 
 // 可选参数
 Route::get('user/{name?}', function ($name = 'John') {
@@ -108,7 +115,7 @@ Route::permanentRedirect('/redirect', '/user');
 //	})->name('users');
 //});
 
-// 路由模型绑定 :行为注入模型 ID 时，就需要查询这个 ID 对应的模型
+// 路由模型绑定:行为注入模型 ID 时，就需要查询这个 ID 对应的模型
 // 隐式绑定
 Route::get('api/users/{user}', function (App\Models\User $user) {
     return $user->email;
@@ -117,8 +124,8 @@ Route::get('api/users/{user}', function (App\Models\User $user) {
 Route::get('profile/{user}', function (App\Models\User $user) {
     //
 });
-Route::get('photos/popular', 'PhotoController@method');
-Route::resource('photos', 'PhotoController')->names([
+Route::get('photos/popular', [PhotoController::class, 'method']);
+Route::resource('photos', PhotoController::class)->names([
     'create' => 'photos.build'
 ])->parameters([
     'users' => 'admin_user'
@@ -141,8 +148,7 @@ Route::middleware('auth:api', 'throttle:rate_limit,1')->group(function () {
     });
 });
 
-// 回退路由 没有其他路由匹配传入请求时执行的路由
-// 是应用程序注册的最后一个路由
+// 回退路由 没有其他路由匹配传入请求时执行的路由,是应用程序注册的最后一个路由
 Route::fallback(function () {
 //	redirect()->route('home');
 //	die;
